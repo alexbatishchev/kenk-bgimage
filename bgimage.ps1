@@ -29,9 +29,10 @@
 	$bmp.Save($filename) 
 	$graphics.Dispose() 
 	
-  # задача через реестр не работает без ребута или форсирования установок, так что настраиваем руками. Но можем открыть картинку в дефолтном приложении
+  # задание обоев через реестр не работает без ребута или форсирования установок, так что этот код в продакшн не идёт
 	#Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\" -Name "Wallpaper" -Value $filename -force
 	#Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\" -Name "TileWallpaper" -Value "1" -force
 	#Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\" -Name "WallpaperStyle " -Value "2" -force
+# Окрыть картинку в дефолтном приложении на хосте (обычно это паинт и в нём можно сразу поставить фон плиткой)
 	Invoke-Item $filename  
 
